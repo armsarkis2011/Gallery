@@ -1,0 +1,210 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>SBI Beauty Salon</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Concept: the salon itself. Espresso-black ground (the brand's #150F0B), dark marble depth, warm oak/champagne accent, ivory text. Display italics for one key phrase per headline, small spaced caps for labels, hairline rules instead of cards. */
+:root {
+  --bg: #150f0b; --bg2: #1d1510; --fg: #f3ebe0; --muted: #b3a595; --line: #3a2d24;
+  --gold: #c9a86a; --gold-hi: #e2c78d; --blush: #d8aaa0; --btn-fg: #1a110b;
+  --display: "Cormorant Garamond", "Didot", Georgia, serif;
+  --body: "Jost", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; font-weight: 300; line-height: 1.65;
+  padding-block: 0 48px; padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px));
+  background-image: radial-gradient(900px 500px at 85% -5%, rgba(216,170,160,.10), transparent 60%), radial-gradient(700px 500px at -10% 30%, rgba(201,168,106,.07), transparent 60%);
+  background-repeat: no-repeat;
+}
+.wrap { max-width: 1120px; margin: 0 auto; }
+.ic { width: 1em; height: 1em; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.label { font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--gold); font-weight: 400; }
+em { font-style: italic; color: var(--gold-hi); }
+
+header.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+.mono { width: 46px; height: 46px; color: var(--gold); }
+.brand b { display: block; font-family: var(--display); font-weight: 500; font-size: 21px; letter-spacing: .14em; line-height: 1.1; }
+.brand span { display: block; font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
+.where { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); text-align: right; }
+@media (max-width: 560px) { .where { display: none; } }
+
+.hero { display: grid; gap: 40px; padding: 48px 0 56px; align-items: center; }
+@media (min-width: 820px) { .hero { grid-template-columns: 1.1fr .9fr; gap: 64px; padding: 72px 0 80px; } }
+.hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(42px, 8vw, 78px); line-height: 1.02; letter-spacing: -.01em; margin: 18px 0 22px; text-wrap: balance; }
+.hero p { margin: 0 0 32px; max-width: 44ch; color: var(--muted); font-size: 17px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--btn-fg); padding: 15px 28px; text-decoration: none; font-weight: 500; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; border-radius: 2px; }
+.btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--gold); }
+.btn:focus-visible, .tab:focus-visible, .copy:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 4px; }
+.arch { position: relative; width: min(100%, 380px); margin-inline: auto; aspect-ratio: 3 / 4.3; border-radius: 999px 999px 4px 4px; overflow: hidden; border: 1px solid var(--gold); padding: 8px; }
+.arch::before { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 8px var(--bg); pointer-events: none; z-index: 2; }
+.arch video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; border-radius: 999px 999px 2px 2px; display: block; }
+
+.rule { display: flex; align-items: center; gap: 18px; color: var(--gold); margin: 0 0 8px; }
+.rule::before, .rule::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+.occ { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 26px; padding: 14px 0 6px; color: var(--muted); font-size: 12px; letter-spacing: .24em; text-transform: uppercase; }
+
+.gal-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 18px; padding: 56px 0 26px; }
+.gal-head h2, .sec h2, .contact h2 { font-family: var(--display); font-weight: 400; font-size: clamp(32px, 5vw, 50px); line-height: 1.08; margin: 8px 0 0; text-wrap: balance; }
+.tabs { display: flex; flex-wrap: wrap; gap: 4px 22px; }
+.tab { font: inherit; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); background: none; border: 0; border-bottom: 1px solid transparent; padding: 8px 0; cursor: pointer; }
+.tab[aria-pressed="true"] { color: var(--gold-hi); border-bottom-color: var(--gold); }
+
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-items: start; }
+@media (min-width: 720px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } }
+@media (min-width: 1000px) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.tile { margin: 0; min-width: 0; }
+.tile[hidden] { display: none; }
+.ph { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: var(--bg2); border: 1px solid var(--line); }
+.ph video, .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; display: block; }
+.tile figcaption { padding: 10px 2px 0; font-family: var(--display); font-size: 18px; line-height: 1.25; }
+.tile figcaption span { display: block; font-family: var(--body); font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); margin-bottom: 1px; }
+
+.sec { margin-top: 88px; }
+.cols { display: grid; gap: 0; margin-top: 30px; border-top: 1px solid var(--line); }
+@media (min-width: 720px) { .cols { grid-template-columns: repeat(3, minmax(0, 1fr)); } .cols > div { border-left: 1px solid var(--line); padding: 28px 28px 8px; } .cols > div:first-child { border-left: 0; padding-left: 0; } }
+.cols > div { min-width: 0; padding: 24px 0; border-bottom: 1px solid var(--line); }
+@media (min-width: 720px) { .cols > div { border-bottom: 0; } }
+.cols .n { font-family: var(--display); font-style: italic; font-size: 34px; color: var(--gold); display: block; line-height: 1; margin-bottom: 10px; }
+.cols h3 { font-family: var(--display); font-weight: 500; font-size: 24px; margin: 0 0 6px; }
+.cols p { margin: 0; color: var(--muted); }
+
+.contact { margin-top: 96px; padding: 56px 24px; text-align: center; border: 1px solid var(--line); background: linear-gradient(180deg, rgba(201,168,106,.07), transparent); position: relative; }
+.contact::before { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(201,168,106,.35); pointer-events: none; }
+.contact p { margin: 14px auto 28px; color: var(--muted); max-width: 46ch; }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 18px 30px; position: relative; }
+.phone { display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.phone strong { font-family: var(--display); font-weight: 500; font-size: 24px; letter-spacing: .04em; user-select: all; }
+.copy { font: inherit; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 2px; padding: 7px 14px; cursor: pointer; }
+.sound { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 20; display: inline-flex; align-items: center; gap: 10px; font: inherit; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--fg); background: rgba(21,15,11,.88); border: 1px solid var(--gold); border-radius: 999px; padding: 11px 18px; cursor: pointer; backdrop-filter: blur(6px); }
+.sound .eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; }
+.sound .eq i { width: 2px; height: 4px; background: var(--gold-hi); display: block; }
+.sound[aria-pressed="true"] .eq i { animation: eq 1s ease-in-out infinite; }
+.sound[aria-pressed="true"] .eq i:nth-child(2) { animation-delay: .25s; }
+.sound[aria-pressed="true"] .eq i:nth-child(3) { animation-delay: .5s; }
+@keyframes eq { 0%,100% { height: 3px; } 50% { height: 12px; } }
+.sound:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 3px; }
+footer { margin-top: 44px; color: var(--muted); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; text-align: center; line-height: 2; }
+@media (prefers-reduced-motion: no-preference) { .ph img, .ph video { transition: transform .6s ease; } .tile:hover .ph img, .tile:hover .ph video { transform: scale(1.03); } }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.9"/></symbol>
+</defs></svg>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top" aria-label="SBI Beauty Salon">
+      <svg class="mono" viewBox="0 0 100 100" aria-hidden="true">
+        <defs><path id="ring" d="M50 50 m-39 0 a39 39 0 1 1 78 0 a39 39 0 1 1 -78 0"/></defs>
+        <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/>
+        <text font-family="Jost, sans-serif" font-size="8.6" letter-spacing="3.3" fill="currentColor"><textPath href="#ring" startOffset="0">SARKISOV · BEAUTY · INDUSTRY ·</textPath></text>
+        <text x="50" y="60" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="27" font-weight="500" fill="currentColor">SBI</text>
+      </svg>
+      <div><b>SBI</b><span>Beauty Salon</span></div>
+    </a>
+    <div class="where">Marlboro / Englishtown, NJ</div>
+  </header>
+
+  <section class="hero" id="top">
+    <div>
+      <div class="label">Weddings · Events · Makeup</div>
+      <h1>Hair and makeup for days <em>worth remembering.</em></h1>
+      <p>Created for you in our studio or at your location, with a preview look so you know exactly how you will look.</p>
+      <a class="btn" href="https://www.instagram.com/sbi_salon" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-insta"/></svg> Message us on Instagram</a>
+    </div>
+    <div class="arch"><video src="m/v01.mp4" poster="m/v01.jpg" autoplay muted loop playsinline aria-label="Hollywood waves"></video></div>
+  </section>
+
+  <div class="rule" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M12 2l1.8 8.2L22 12l-8.2 1.8L12 22l-1.8-8.2L2 12l8.2-1.8z" fill="currentColor" stroke="none"/></svg></div>
+  <div class="occ" aria-label="Occasions we style"><span>Weddings</span><span>Engagements</span><span>Proms</span><span>Birthdays</span><span>Galas</span><span>Photoshoots</span></div>
+
+  <div class="gal-head">
+    <div><div class="label">Selected work</div><h2>A look for <em>every occasion</em></h2></div>
+    <div class="tabs" role="group" aria-label="Filter the gallery">
+      <button class="tab" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="tab" type="button" data-filter="wedding" aria-pressed="false">Weddings</button>
+      <button class="tab" type="button" data-filter="party" aria-pressed="false">Events</button>
+      <button class="tab" type="button" data-filter="makeup" aria-pressed="false">Makeup</button>
+    </div>
+  </div>
+
+  <section class="grid" aria-label="Our work">
+    <figure class="tile" data-cat="wedding"><div class="ph"><video src="m/v01.mp4" poster="m/v01.jpg" muted loop playsinline preload="none" aria-label="Hollywood waves"></video></div><figcaption><span>Wedding</span>Hollywood waves</figcaption></figure>
+    <figure class="tile" data-cat="wedding"><div class="ph"><img src="m/p01.jpg" alt="Bridal half-up" loading="lazy"></div><figcaption><span>Wedding</span>Bridal half-up</figcaption></figure>
+    <figure class="tile" data-cat="makeup"><div class="ph"><video src="m/v14.mp4" poster="m/v14.jpg" muted loop playsinline preload="none" aria-label="Soft glam makeup"></video></div><figcaption><span>Makeup</span>Soft glam makeup</figcaption></figure>
+    <figure class="tile" data-cat="wedding"><div class="ph"><video src="m/v02.mp4" poster="m/v02.jpg" muted loop playsinline preload="none" aria-label="Romantic braid"></video></div><figcaption><span>Wedding</span>Romantic braid</figcaption></figure>
+    <figure class="tile" data-cat="makeup"><div class="ph"><img src="m/p02.jpg" alt="Bridal makeup and waves" loading="lazy"></div><figcaption><span>Makeup</span>Bridal makeup and waves</figcaption></figure>
+    <figure class="tile" data-cat="wedding"><div class="ph"><video src="m/v03.mp4" poster="m/v03.jpg" muted loop playsinline preload="none" aria-label="Textured chignon"></video></div><figcaption><span>Wedding</span>Textured chignon</figcaption></figure>
+    <figure class="tile" data-cat="party"><div class="ph"><video src="m/v04.mp4" poster="m/v04.jpg" muted loop playsinline preload="none" aria-label="Event curls"></video></div><figcaption><span>Event</span>Event curls</figcaption></figure>
+    <figure class="tile" data-cat="makeup"><div class="ph"><img src="m/p05.jpg" alt="Glam curls and makeup" loading="lazy"></div><figcaption><span>Makeup</span>Glam curls and makeup</figcaption></figure>
+    <figure class="tile" data-cat="wedding"><div class="ph"><video src="m/v06.mp4" poster="m/v06.jpg" muted loop playsinline preload="none" aria-label="Bridal updo"></video></div><figcaption><span>Wedding</span>Bridal updo</figcaption></figure>
+    <figure class="tile" data-cat="wedding"><div class="ph"><img src="m/p03.jpg" alt="Garden updo" loading="lazy"></div><figcaption><span>Wedding</span>Garden updo</figcaption></figure>
+    <figure class="tile" data-cat="wedding"><div class="ph"><video src="m/v07.mp4" poster="m/v07.jpg" muted loop playsinline preload="none" aria-label="Bride, getting ready"></video></div><figcaption><span>Wedding</span>Bride, getting ready</figcaption></figure>
+    <figure class="tile" data-cat="wedding"><div class="ph"><video src="m/v09.mp4" poster="m/v09.jpg" muted loop playsinline preload="none" aria-label="Bridal half-up"></video></div><figcaption><span>Wedding</span>Bridal half-up</figcaption></figure>
+    <figure class="tile" data-cat="makeup"><div class="ph"><img src="m/p04.jpg" alt="Radiant glow" loading="lazy"></div><figcaption><span>Makeup</span>Radiant glow</figcaption></figure>
+    <figure class="tile" data-cat="wedding"><div class="ph"><video src="m/v10.mp4" poster="m/v10.jpg" muted loop playsinline preload="none" aria-label="Braided half-up"></video></div><figcaption><span>Wedding</span>Braided half-up</figcaption></figure>
+    <figure class="tile" data-cat="wedding"><div class="ph"><video src="m/v11.mp4" poster="m/v11.jpg" muted loop playsinline preload="none" aria-label="Bridal curls"></video></div><figcaption><span>Wedding</span>Bridal curls</figcaption></figure>
+    <figure class="tile" data-cat="party"><div class="ph"><video src="m/v12.mp4" poster="m/v12.jpg" muted loop playsinline preload="none" aria-label="Prom curls"></video></div><figcaption><span>Event</span>Prom curls</figcaption></figure>
+    <figure class="tile" data-cat="party"><div class="ph"><img src="m/p06.jpg" alt="Soft waves" loading="lazy"></div><figcaption><span>Event</span>Soft waves</figcaption></figure>
+    <figure class="tile" data-cat="party"><div class="ph"><video src="m/v05.mp4" poster="m/v05.jpg" muted loop playsinline preload="none" aria-label="Glam waves"></video></div><figcaption><span>Event</span>Glam waves</figcaption></figure>
+    <figure class="tile" data-cat="party"><div class="ph"><video src="m/v08.mp4" poster="m/v08.jpg" muted loop playsinline preload="none" aria-label="Textured bun"></video></div><figcaption><span>Event</span>Textured bun</figcaption></figure>
+    <figure class="tile" data-cat="wedding"><div class="ph"><video src="m/v13.mp4" poster="m/v13.jpg" muted loop playsinline preload="none" aria-label="Bridal party"></video></div><figcaption><span>Wedding</span>Bridal party</figcaption></figure>
+    <figure class="tile" data-cat="party"><div class="ph"><img src="m/p07.jpg" alt="Natural waves" loading="lazy"></div><figcaption><span>Event</span>Natural waves</figcaption></figure>
+  </section>
+
+  <section class="sec">
+    <div class="label">How it works</div>
+    <h2>From first message to <em>the big day</em></h2>
+    <div class="cols">
+      <div><span class="n">I</span><h3>Browse the work</h3><p>See the styles we create and save the ones you love.</p></div>
+      <div><span class="n">II</span><h3>Send us a message</h3><p>Tell us the occasion and the date. We reply personally.</p></div>
+      <div><span class="n">III</span><h3>Meet for a preview look</h3><p>We design your hair and makeup together, so there are no surprises on the day.</p></div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="label" style="position:relative">Let us style your day</div>
+    <h2 style="position:relative">Planning a <em>celebration?</em></h2>
+    <p style="position:relative">Tell us the date and the look you have in mind. We will take it from there.</p>
+    <div class="actions">
+      <a class="btn" href="https://www.instagram.com/sbi_salon" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-insta"/></svg> Message us on Instagram</a>
+      <div class="phone"><strong id="phone-num">(848) 243-0032</strong><button class="copy" type="button" id="copy-btn">Copy number</button></div>
+    </div>
+  </section>
+
+  <footer>SBI Beauty Salon<br>Marlboro / Englishtown, New Jersey · Hair, makeup and nails</footer>
+</div>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tab'), tiles = document.querySelectorAll('.tile');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var f = tab.getAttribute('data-filter');
+      tabs.forEach(function (c) { c.setAttribute('aria-pressed', c === tab ? 'true' : 'false'); });
+      tiles.forEach(function (t) { t.hidden = !(f === 'all' || t.getAttribute('data-cat') === f); });
+    });
+  });
+  var vids = document.querySelectorAll('.tile video');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { var v = e.target; if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.pause(); } });
+    }, { rootMargin: '120px' });
+    vids.forEach(function (v) { io.observe(v); });
+  }
+  var btn = document.getElementById('copy-btn'), num = document.getElementById('phone-num');
+  btn.addEventListener('click', function () {
+    var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy number'; }, 1800); };
+    var fallback = function () { var r = document.createRange(); r.selectNodeContents(num); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected'; };
+    try { navigator.clipboard.writeText(num.textContent).then(done, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>
+
+</body></html>
